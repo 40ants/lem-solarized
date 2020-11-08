@@ -11,10 +11,14 @@
 (in-package lem-solarized/light)
 
 
-(defclass solarized-light (theme)
-  ((background-mode :initform :light)
-   (background :initform +base3+)
-   (foreground :initform +base03+)))
+(eval-when (:compile-toplevel :load-toplevel :execute)
+  (defclass solarized-light (theme)
+    ((background-mode :initform :light)
+;     (background :initform nil)
+;     (foreground :initform nil)
+     (background :initform +base3+)
+     (foreground :initform +base03+)
+     )))
 
 
 (defmethod lem-theme/theme:all-colors ((theme solarized-light))
@@ -47,4 +51,12 @@
 
 (defspec (solarized-light)
   (LEM-LISP-MODE:INSPECTOR-VALUE-ATTRIBUTE :fg +cyan+)
-  (LEM-LISP-MODE:INSPECTOR-ACTION-ATTRIBUTE :fg +red+))
+  (LEM-LISP-MODE:INSPECTOR-ACTION-ATTRIBUTE :fg +red+)
+  (LEM-LISP-MODE::EVALUATION-REGION-HIGHLIGHT :fg +cyan+))
+
+(defspec (solarized-light)
+  (LEM.DIRECTORY-MODE::FILE-ATTRIBUTE :fg +base1+)
+  (LEM.DIRECTORY-MODE::DIRECTORY-ATTRIBUTE :fg +base1+ :bold-p t)
+  (LEM.DIRECTORY-MODE::CURRENT-LINE-ATTRIBUTE :fg +orange+ :bg +base2+)
+  (LEM.DIRECTORY-MODE::HEADER-ATTRIBUTE :fg +red+ :bg +orange+)
+  (LEM.DIRECTORY-MODE::LINK-ATTRIBUTE :fg +blue+ :bg +violet+))

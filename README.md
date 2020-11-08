@@ -8,4 +8,16 @@ It uses [Solarized palette](https://ethanschoonover.com/solarized/) to define li
 
 ## Installation
 
-TODO: write this section using Ultralisp.org
+```lisp
+(unless (member "ultralisp" (ql-dist:all-dists)
+                :key 'ql-dist:name
+                :test 'string=)
+  (ql-dist:install-dist "http://dist.ultralisp.org/"
+                        :prompt nil))
+
+;; Load the extension
+(ql:quickload :lem-solarized)
+
+;; Enable the theme
+(uiop:symbol-call :lem-solarized :solarized-light)
+```

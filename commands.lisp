@@ -2,6 +2,8 @@
   (:use :cl)
   (:import-from #:lem-solarized/light
                 #:solarized-light)
+  (:import-from #:lem-solarized/dark
+                #:solarized-dark)
   (:import-from #:lem-solarized/colors
                 #:change-colors)
   (:import-from #:lem-theme/theme))
@@ -12,7 +14,5 @@
   (lem-theme/theme:load-theme 'solarized-light))
 
 
-;; (lem:define-command solarized-dark () ()
-;;   (change-colors)
-;;   (lem:load-theme "solarized-dark")
-;;   (setf *current-theme* 'solarized-dark))
+(lem:define-command solarized-dark () ()
+  (lem-theme/theme:load-theme 'solarized-dark))

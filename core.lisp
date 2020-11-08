@@ -2,6 +2,8 @@
   (:use :cl)
   (:nicknames #:lem-solarized/core)
   (:import-from #:lem-solarized/commands
-                #:solarized-light)
-  (:export #:solarized-light))
+                #:solarized-light
+                #:solarized-dark)
+  (:export #:solarized-light
+           #:solarized-dark))
 (in-package lem-solarized)
