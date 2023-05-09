@@ -25,7 +25,8 @@
   +all-colors+)
 
 (defmethod lem-theme/theme:on-load ((theme solarized-light))
-  (lem-solarized/colors:change-colors))
+  ;; (lem-solarized/colors:change-colors)
+  )
 
 
 (defspec (solarized-light)
@@ -38,16 +39,16 @@
   (lem:syntax-function-name-attribute :fg +blue+)
   (lem:syntax-variable-attribute :fg +blue+)
   (lem:syntax-type-attribute :fg +red+)
-  (lem:region :fg +base1+ :bg +base3+ :reverse-p t)
-  (lem:minibuffer-prompt-attribute :fg +cyan+ :bold-p t)
+  (lem:region :fg +base1+ :bg +base3+ :reverse t)
+  (lem/prompt-window:prompt-attribute :fg +cyan+ :bold t)
   ;; Builtin functions and Lisp keyword symbols:
   (lem:syntax-builtin-attribute :fg +green+)
-  (lem:modeline :fg +base01+ :bg +base2+ :bold-p t)
+  (lem:modeline :fg +base01+ :bg +base2+ :bold t)
   (lem:modeline-inactive :fg +base00+ :bg +base2+))
 
 
 (defspec (solarized-light)
-  (lem.listener-mode:listener-prompt-attribute :fg +blue+))
+  (lem/listener-mode:listener-prompt-attribute :fg +blue+))
 
 (defspec (solarized-light)
   (LEM-LISP-MODE:INSPECTOR-VALUE-ATTRIBUTE :fg +cyan+)
@@ -55,8 +56,8 @@
   (LEM-LISP-MODE::EVALUATION-REGION-HIGHLIGHT :fg +cyan+))
 
 (defspec (solarized-light)
-  (LEM.DIRECTORY-MODE::FILE-ATTRIBUTE :fg +base1+)
-  (LEM.DIRECTORY-MODE::DIRECTORY-ATTRIBUTE :fg +base1+ :bold-p t)
-  (LEM.DIRECTORY-MODE::CURRENT-LINE-ATTRIBUTE :fg +orange+ :bg +base2+)
-  (LEM.DIRECTORY-MODE::HEADER-ATTRIBUTE :fg +red+ :bg +orange+)
-  (LEM.DIRECTORY-MODE::LINK-ATTRIBUTE :fg +blue+ :bg +violet+))
+  (lem/directory-mode::file-attribute :fg +base1+)
+  (lem/directory-mode::directory-attribute :fg +base1+ :bold t)
+  ;; (lem/directory-mode::current-line-attribute :fg +orange+ :bg +base2+)
+  (lem/directory-mode::header-attribute :fg +red+ :bg +orange+)
+  (lem/directory-mode::link-attribute :fg +blue+ :bg +violet+))
