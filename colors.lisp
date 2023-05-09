@@ -64,6 +64,7 @@
     +green+))
 
 
+#+lem-ncurses
 (defun change-colors ()
   ;; Here we'll change a part of the palette at the end.
   ;; I hope this will not break something.

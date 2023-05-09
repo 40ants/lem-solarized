@@ -25,7 +25,8 @@
   +all-colors+)
 
 (defmethod lem-theme/theme:on-load ((theme solarized-light))
-  (lem-solarized/colors:change-colors))
+  ;; (lem-solarized/colors:change-colors)
+  )
 
 
 (defspec (solarized-light)
