@@ -68,9 +68,9 @@
 (defun change-colors ()
   ;; Here we'll change a part of the palette at the end.
   ;; I hope this will not break something.
-  (loop for idx upfrom (- (length lem.term::*colors*)
+  (loop for idx upfrom (- (length lem-ncurses/term::*colors*)
                           (length +all-colors+)
                           1)
         for color in +all-colors+
         for parsed = (lem:parse-color (symbol-value color))
-        do (apply #'lem.term:term-set-color idx parsed)))
+        do (apply #'lem-ncurses/term:term-set-color idx parsed)))
